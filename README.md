@@ -3,8 +3,9 @@
 프리코스 전에 해야할 것들
 
 1. github에 fork하고 pullrequest 하는 법을 다시 보자!! 
-* https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/ 를 참고하면 좋습니다.
+	* https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/ 를 참고하면 좋습니다.
 2. JS 기본 문법 및 컨벤션을 확인해보자!
+	* https://velog.io/@recordboy/자바스크립트-변수-명명-규칙 를 참고하면 좋습니다.
 ---------------------------------
 
 ### 숫자야구 흐름
