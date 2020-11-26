@@ -6,6 +6,8 @@
 	* https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/ 를 참고하면 좋습니다.
 2. JS 기본 문법 및 컨벤션을 확인해보자!
 	* https://velog.io/@recordboy/자바스크립트-변수-명명-규칙 를 참고하면 좋습니다.
+3. 좋은 코드란 어떻게 만드는 것
+	* https://github.com/qkraudghgh/clean-code-javascript-ko 자바스크립트를 통해 클린코드를 보자.
 ---------------------------------
 
 
