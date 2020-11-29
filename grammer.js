@@ -2,7 +2,7 @@
 // {
 //   const fruits = ['apple','banana','orange'];
 //   const result = fruits.join();
-//   console.log(result); 
+//   console.log(result);
 // }
 // //split
 // {
@@ -16,17 +16,20 @@
 //   const result = array.reverse();
 //   console.log(result);
 // }
+
+let a = [1,2,3,4,5,6]
+console.log(a.slice(2,4));
 // // slice(부분 추출)
 // {
-//   const array = [1,2,3,4,5];
-//   const result = array.slice(2,4);
-//   console.log("array = "+ array + "\nresult = "+result);
+  const array = [1,2,3,4,5];
+  const result = array.slice(2,4);
+  console.log("array = "+ array + "\nresult = "+result);
 // }
 // // splice(부분 삭제)
 // {
 //   const array = [1,2,3,4,5];
 //   const result = array.splice(2);
-//   console.log("array = " + array , '\nresult = ' + result); 
+//   console.log("array = " + array , '\nresult = ' + result);
 // }
 // // find() / filter() / map() / some() / every()
 // {
@@ -47,12 +50,12 @@
 //     new Student('D',40,false,66),
 //     new Student('E',18,true,88)
 //   ];
-  
+
 //   const result = students.find((student) => student.score === 90);
 
 //   console.log(result);
 
-//   // 내가 기존의 생각으로 푼 것 
+//   // 내가 기존의 생각으로 푼 것
 //   // indent가 너무 깊어지고 코드가 더러워진다.
 
 //   // for (let index = 0; index < students.length; index++) {
@@ -61,7 +64,7 @@
 //   //     console.log(element.name);
 //   //     };
 //   // };
- 
+
 //   const result2 = students.filter((student) => student.enrolled === true)
 //   console.log(result2);
 
@@ -88,7 +91,7 @@
 //   const result6 = students.reduce((total,student) => total += student.score,0);
 //   console.log(result6/students.length);
 
-//   // 
+//   //
 //   // let result4 = false
 //   // for (let index = 0; index < students.length; index++) {
 //   //   const student = students[index];
@@ -111,17 +114,3 @@
 //     .join()
 //   console.log(result8);
 // }
-
-
-let result = {
-  'Strike':0,
-  'Ball':0,
-  'Out':0
-          };
-let result2 = {
-  'Strike':0,
-  'Ball':0,
-  'Out':0
-          };
-console.log(JSON.stringify(result) == JSON.stringify(result2))
-console.log(Object.keys(result).length)
