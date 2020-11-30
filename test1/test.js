@@ -1,11 +1,11 @@
 export default class Car {
     carName;
-    constructor (carName) {
+    constructor(carName) {
         this.carName = carName;
         this.nowPosition = "";
     };
-    #makeRandomNumber () {
-     return parseInt(Math.random()*10);
+    #makeRandomNumber() {
+        return parseInt(Math.random() * 10);
     }
     makeOneIning() {
         if (this.#makeRandomNumber() <= 3) {
@@ -14,7 +14,7 @@ export default class Car {
         }
         return this;
     }
-    printNowPosition () {
+    printNowPosition() {
         return `${this.carName} : ${this.nowPosition}`
     }
 }

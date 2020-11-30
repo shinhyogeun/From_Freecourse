@@ -17,13 +17,13 @@
 //   console.log(result);
 // }
 
-let a = [1,2,3,4,5,6]
-console.log(a.slice(2,4));
+let a = [1, 2, 3, 4, 5, 6]
+console.log(a.slice(2, 4));
 // // slice(부분 추출)
 // {
-  const array = [1,2,3,4,5];
-  const result = array.slice(2,4);
-  console.log("array = "+ array + "\nresult = "+result);
+const array = [1, 2, 3, 4, 5];
+const result = array.slice(2, 4);
+console.log('array = ' + array + "\nresult = " + result);
 // }
 // // splice(부분 삭제)
 // {
