@@ -1,22 +1,29 @@
+import CalculateScore from './calculatescore.js'
 
-export default class Balling {
-    #score = 0;
-    #scoreArray = [];
-    #oneInningArray = [];
-    #stakedStrike = [];
-    #stakedSpare = [];
+export default class BallingGame {
+    #calculator;
+    #oneInningArray;
+    #inning;
+
     constructor() {
         const BALLING_INNING = 10;
+        const LAST_INNING = 10;
+        const ONE_SHOT = 1;
+        const TWO_SHOT = 2;
+        this.#calculator = new CalculateScore();
+        this.#oneInningArray = [];
+        this.#inning = 0;
+        this.startGame()
     }
 
-    #makeHalfInning() {
+    makeHalfInning() {
         const halfInningScore = parseInt(Math.random() * 11);
         this.#oneInningArray.push(halfInningScore);
 
         return halfInningScore;
     }
 
-    #makeLastInning(number) {
+    makeLastInning(number) {
         if (number !== 10) {
             const halfInningScore = parseInt(Math.random() * (11 - number));
             this.#oneInningArray.push(halfInningScore);
@@ -27,30 +34,45 @@ export default class Balling {
         return;
     }
 
-    #makeOneInning() {
-        const firstScore = this.#makeHalfInning();
-        this.#makeLastInning(firstScore);
+    makeOneInning() {
+        this.#inning += 1
+        this.#oneInningArray = [];
+        const firstScore = this.makeHalfInning();
+
+        this.makeLastInning(firstScore);
     }
 
-    #calculateScore() {
-        const inningScore = this.#oneInningArray.reduce((score, item) => score + item, 0)
-        const ONE_SHOT = 1
-        const TWO_SHOT = 2
-        // 스트라이크를 친 경우(In this case, inningScore is equals to 10)
-        if (this.#oneInningArray.length === ONE_SHOT) {
-            this.#stakedScore.map(item => item + inningScore).push(inningScore);
-            this.#oneInningArray = []
+    addOneInning() {
+        this.makeOneInning();
+        const oneInningScore = this.#oneInningArray;
+        if (this.#inning === 10) {
+            this.#calculator.whenLastInningOrNormal(oneInningScore);
+
+            return;
         }
-        // 스페어 처리를 한 경우
-        if (this.#oneInningArray.length === TWO_SHOT && inningScore === 10) {
-            this.#stakedScore
+
+        if (this.#calculator.isStrike(oneInningScore)) {
+            this.#calculator.whenStrikeOccured();
+
+            return;
         }
+
+        if (this.#calculator.isSpare(oneInningScore)) {
+            this.#calculator.whenSpareOccured(oneInningScore);
+
+            return;
+        }
+
+        this.#calculator.whenLastInningOrNormal(oneInningScore);
     }
 
-    makeGame() {
-        for (var i = 0; i < BALLING_INNING; i++) {
-            this.#makeOneInning()
+    startGame() {
+        for (var i = 0; i < 10; i++) {
+            this.addOneInning()
         }
+            
+        return this.#calculator.getTotalScore()
     }
-
 }
+
+console.log(new BallingGame());
