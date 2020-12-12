@@ -215,12 +215,51 @@
 <고민하는 부분>
 
 1. Data로 저장하는 것을 객체로 만들까?
-
+ex) stationRepository = {
+                                    신림역 : new Station("신림역"),
+                                    신도림역 : new Station("신도림역"),
+                                    신풍역 : new Station("신풍역")
+                                      }
+                                 
 ex) line Repository ={
                                     1호선 : new Line("1호선","인천","소요산"), 
                                     2호선 : new Line("2호선","신촌","신도림")
                                    }
-    그리고 저 객체 안에는 호선이 포함하는 역들의 배열이 있다.
+                                   
+그리고 저 객체 안에는 호선이 포함하는 역들의 배열이 있다.
+    새로운 역을 만들때 포함하는지 검사한다면 
+    stationRepository.hasOwnProperty(새로운 역의 이름)
+    새로운 호선을 만들때 포함하는지 검사한다면
+    lineRepository.hasOwnProperty(새로운 호선의 이름)
+    이렇게 만들어서 Line 객체안에서 stationArray라는 속성으로 그 호선의 역순서를 저장한다.
     
 2. HTML과의 상호작용에 대한 공부가 더 필요하다.
+    표를 만드는 것은
+            <table border="1">
+                <th>테이블</th>
+                <th>만들기</th>
+                <th>숫자</th>
+                <tr>
+                    <td>첫번째 열의 제목</td>
+                    <td>두번째 열의 제목</td>
+                    <td>세번째 열의 제목</td>
+                </tr>
+                <tr>
+                    <td>첫번째 열</td>
+                    <td>두번째 열</td>
+                    <td>세번째 열</td>
+                </tr>
+                </table>
+                
+    선택을 하는 것(select 태그를 이용한 것)은
+    
+    <select >
+        <option>1번째 선택할 것</option>
+        <option>2번째 선택할 것</option>
+        <option>3번째 선택할 것</option>
+        <option>4번째 선택할 것</option>
+    </select>
 
+    선택된 것을 얻는 방법은 다음과 같다.
+    const selectOption = document.getElementById()
+    selectOption.options[selectOption.selectedIndex].value;
