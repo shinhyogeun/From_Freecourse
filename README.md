@@ -236,13 +236,13 @@ ex) line Repository ={
 2. HTML과의 상호작용에 대한 공부가 더 필요하다.
     표를 만드는 것은
             <table border="1">
-                <th>테이블</th>
-                <th>만들기</th>
-                <th>숫자</th>
+                <th>첫번째 열의 제목</th>
+                <th>두번째 열의 제목</th>
+                <th>세번째 열의 제목</th>
                 <tr>
-                    <td>첫번째 열의 제목</td>
-                    <td>두번째 열의 제목</td>
-                    <td>세번째 열의 제목</td>
+                    <td>첫번째 열</td>
+                    <td>두번째 열</td>
+                    <td>세번째 열</td>
                 </tr>
                 <tr>
                     <td>첫번째 열</td>
