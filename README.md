@@ -214,7 +214,7 @@
 ----------------------------------------------------------------
 <고민하는 부분>
 
-**1. Data로 저장하는 것을 객체로 만들까?**
+**1. Data로 저장하는 것을 객체로 만들까?**<br>
 ex) stationRepository = {
                            신림역 : new Station("신림역"),
                            신도림역 : new Station("신도림역"),
@@ -235,31 +235,31 @@ ex) line Repository ={
     
 **2. HTML과의 상호작용에 대한 공부가 더 필요하다.**
   - 표를 만드는 것은
-            "<table border="1">
-                <th>첫번째 열의 제목</th>
-                <th>두번째 열의 제목</th>
-                <th>세번째 열의 제목</th>
-                <tr>
-                    <td>첫번째 열</td>
-                    <td>두번째 열</td>
-                    <td>세번째 열</td>
-                </tr>
-                <tr>
-                    <td>첫번째 열</td>
-                    <td>두번째 열</td>
-                    <td>세번째 열</td>
-                </tr>
-                </table>"
+	<table border="1">
+	<th>첫번째 열의 제목</th>
+	<th>두번째 열의 제목</th>
+	<th>세번째 열의 제목</th>
+	<tr>
+	<td>첫번째 열</td>
+	<td>두번째 열</td>
+	<td>세번째 열</td>
+	</tr>
+	<tr>
+	<td>첫번째 열</td>
+	<td>두번째 열</td>
+	<td>세번째 열</td>
+	</tr>
+	</table>"
                 
 
   - 선택을 하는 것(select 태그를 이용한 것)은
     
-    <select >
+	<select>
         <option>1번째 선택할 것</option>
         <option>2번째 선택할 것</option>
         <option>3번째 선택할 것</option>
         <option>4번째 선택할 것</option>
-    </select>
+	</select>
 
 <p> 선택된 것을 얻는 방법은 다음과 같다.<br>
     const selectOption = document.getElementById()<br>
