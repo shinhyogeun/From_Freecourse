@@ -265,6 +265,7 @@ ex) line Repository ={
     const selectOption = document.getElementById()<br>
     selectOption.options[selectOption.selectedIndex].value</p>
 ----------------------------------------------------------------
+
 ## 📝 3주차에 고민하고 배웠던 부분
 
 **1. innerHTML vs appendChild** <br/>
