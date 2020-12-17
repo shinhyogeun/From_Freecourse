@@ -1,31 +1,24 @@
-import { menuPaper } from "./menuPaper.js";
-import { tables } from "./tables.js";
-import { showMenu, hideMenu } from "./MenuPossView.js";
+import { OrderManager } from "./orderManager.js";
+import { PayManager } from "./payManager.js";
 
 export default class MenuPoss {
     constructor() {
-        this.addEventToLookMenuButton();
+        this.addEventToOrderButton();
+        this.addEventToPaybutton();
     }
 
-    addEventToLookMenuButton = () => {
-        let token = true;
-        document.querySelector("#look-menu-button").addEventListener("click", () => {
-            if (token) {
-                showMenu(tables, menuPaper)
-                this.addEventToOrderButton();
-                return token = false;
-            }
-            hideMenu();
-            return token = true;
+
+    addEventToOrderButton = () => {
+        document.querySelector("#order-button").addEventListener("click", () => {
+            OrderManager.show();
+            PayManager.hide();
         })
     }
 
-    addEventToOrderButton = () => {
-        const orderButtons = document.querySelectorAll(".order-button")
-        Array.prototype.forEach.call(orderButtons, (button) => {
-            button.addEventListener("click", (button) => {
-                console.log(button.target.dataset.menuName);
-            })
+    addEventToPaybutton = () => {
+        document.querySelector("#pay-button").addEventListener("click", () => {
+            OrderManager.hide();
+            PayManager.show();
         })
     }
 }

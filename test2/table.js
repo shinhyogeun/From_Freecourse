@@ -19,11 +19,12 @@ export class Table {
 
     order = (menu, count) => {
         this.totalPrice += menu.price * count;
+        menu.number -= count;
 
         if (this.menuOrdered[menu.name]) {
-            return this.menuOrdered[menu.name] += 1;
+            return this.menuOrdered[menu.name] += count;
         }
 
-        return this.menuOrdered[menu.name] = 0;
+        return this.menuOrdered[menu.name] = count;
     }
 }
