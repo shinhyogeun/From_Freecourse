@@ -313,3 +313,6 @@ ex) line Repository ={
     - addEventListner를 1줄로 만들려고 노력해라.
   - 3. 상수 이름 더 더 고민해서 만들어라!! 제발
     - 정말 누가봐도 알아볼 수 있도록 만들자!! 시간 정말 많이 쏟아야 하는 부분
+
+- 파일을 어떻게 나눌까?
+ - view를 만드는 View폴더, 값들을 validation을 검증하는 controller폴더, 일반객체 및 HTMLmaker를 포함하는 components
