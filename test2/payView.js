@@ -14,21 +14,41 @@ export const hidePayHTML = () => {
 }
 
 export const makeTableResult = (tableNumber) => {
-    document.querySelector("#table-result-div").innerHTML +=
-        makeTableOrderList(tableNumber) +
-        makeTotalCost(tableNumber);
+    let tableOrderListDiv = document.createElement("div");
+
+    tableOrderListDiv.setAttribute("id", "order-list-div");
+    tableOrderListDiv.innerHTML +=
+        makeTableOrderList(tableNumber)
+        + makeTotalCost(tableNumber)
+        + makePayButton(tableNumber);
+
+    document.querySelector("#table-result-div").appendChild(tableOrderListDiv);
+}
+
+export const hideTableResult = () => {
+    const tableOrderListDiv = document.querySelector("#order-list-div");
+
+    if (tableOrderListDiv) {
+        document.querySelector("#table-result-div").removeChild(tableOrderListDiv);
+    }
+
 }
 
 const makeTableOrderList = (tableNumber) => {
     const menuOrdered = tables[tableNumber].menuOrdered
-    return `<table border=1px>
+
+    return `<br><table border=1px>
                 <th>메뉴</th><th>가격</th><th>수량</th>
                 ${makeTableOrderRow(menuOrdered)}
             </table>`
 }
 
 const makeTotalCost = (tableNumber) => {
-    return `<p>${tableNumber} 테이블의 총 결제금액은 ${tables[tableNumber].getTotalPrice()}입니다.<p>`
+    return `<span>${tableNumber} 테이블의 총 결제금액은 ${tables[tableNumber].getTotalPrice()}입니다.</span>`
+}
+
+const makePayButton = (tableNumber) => {
+    return ` <button id=pay-complete-button data-table-number=${tableNumber}>결제하기</button>`
 }
 
 const makeTableButton = () => {

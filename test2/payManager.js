@@ -1,4 +1,5 @@
-import { showPayHTML, hidePayHTML, makeTableResult } from "./payView.js"
+import { showPayHTML, hidePayHTML, makeTableResult, hideTableResult } from "./payView.js"
+import { tables } from "./tables.js"
 
 export class PayManager {
 
@@ -16,8 +17,19 @@ export class PayManager {
 const addEventToTableButton = () => {
     const tableButtons = document.querySelectorAll(".table-button");
     Array.prototype.forEach.call(tableButtons, (tableButton) => {
-        tableButton.addEventListener("click", (button) => {
-            makeTableResult(button.target.dataset.tableNumber);
-        })
+        tableButton.addEventListener("click", (button) => updateTableResult(button));
+    })
+}
+
+const updateTableResult = (button) => {
+    hideTableResult();
+    makeTableResult(button.target.dataset.tableNumber);
+    addEventToPayButton();
+}
+
+const addEventToPayButton = () => {
+    document.querySelector("#pay-complete-button").addEventListener("click", (button) => {
+        tables[button.target.dataset.tableNumber].pay();
+        updateTableResult(button);
     })
 }
