@@ -315,4 +315,9 @@ ex) line Repository ={
     - 정말 누가봐도 알아볼 수 있도록 만들자!! 시간 정말 많이 쏟아야 하는 부분
 
 - 파일을 어떻게 나눌까?
- - view를 만드는 View폴더, 값들을 validation을 검증하는 controller폴더, 일반객체 및 HTMLmaker를 포함하는 components
+ - view를 만드는 View폴더, 값들을 validation을 검증하는 그리고 일반객체를 가지는 Model폴더, 이벤트를 더하고 전반적 흐름을 관장하는 controller폴더, HTMLmaker와 text를 포함하는 components
+
+### 수고했습니다!
+
+
+ 
